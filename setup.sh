@@ -5,15 +5,15 @@ yum groupinstall "Development tools" -y
 yum install wget zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel -y
 
 cd /usr/local/src
-wget -q https://www.python.org/ftp/python/2.7.8/Python-2.7.8.tgz
-tar xvfz Python-2.7.8.tgz
-cd Python-2.7.8
+wget -q wget https://www.python.org/ftp/python/3.4.1/Python-3.4.1.tgz
+tar xvfz Python-3.4.1.tgz
+cd Python-3.4.1
 ./configure --with-threads --enable-shared
 make
 make altinstall
-echo '/usr/local/lib' > /etc/ld.so.conf.d/python2.7.conf
+echo '/usr/local/lib' > /etc/ld.so.conf.d/python3.4.conf
 ldconfig
-ln -s /usr/local/bin/python2.7 /usr/local/bin/python
+ln -s /usr/local/bin/python3.4 /usr/local/bin/python
 
 cd /tmp
 wget -q http://peak.telecommunity.com/dist/ez_setup.py
